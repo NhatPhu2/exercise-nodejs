@@ -7,7 +7,7 @@ const fetchAllContinent = (req, res) => {
 };
 
 const fetchContinentByCountry = (req, res) => {
-  const { country } = req.params;
+  const { country } = req.query;
   fs.readFile("src/fakedata/output.json", (error, data) => {
     if (error) res.status(404).json("File not found");
     let contientObj = JSON.parse(data);
