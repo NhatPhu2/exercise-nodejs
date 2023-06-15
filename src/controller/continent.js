@@ -1,12 +1,12 @@
 const fs = require("fs");
-const fetchAllContinent = (req, res) => {
+const getAllContinent = (req, res) => {
   fs.readFile("src/fakedata/output.json", (error, data) => {
     if (error) res.sendStatus(404);
     res.send(JSON.parse(data));
   });
 };
 
-const fetchContinentByCountry = (req, res) => {
+const getContinentByCountry = (req, res) => {
   const { country } = req.query;
   fs.readFile("src/fakedata/output.json", (error, data) => {
     if (error) res.status(404).json("File not found");
@@ -47,6 +47,6 @@ const fetchContinentByCountry = (req, res) => {
 };
 
 module.exports = {
-  fetchAllContinent,
-  fetchContinentByCountry,
+  getAllContinent,
+  getContinentByCountry,
 };
