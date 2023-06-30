@@ -1,5 +1,7 @@
 package org.example;
 
+import OOPExercise.EX1.CollegeStudent;
+
 import java.util.*;
 
 public class Main {
@@ -280,6 +282,4 @@ public class Main {
         }
 
     }
-
-
 }
