@@ -47,19 +47,31 @@ public class Main {
                 break;
             }
             case 4: {
-
+                ArrayList<Integer> l = new ArrayList<>(List.of(1, 1, 1, 2, 3, 4, 5, 1, 2, 3, 5, 6, 7));
+                ex4(l);
+                break;
             }
             case 5: {
-
+                HashMap<String, Integer> student = new HashMap<>();
+                student.put("Phu", 10);
+                student.put("Bao", 18);
+                exe5(student);
+                break;
             }
             case 6: {
-
+                 ArrayList<String> arr = new ArrayList<>(List.of("a", "b", "c"));
+                 exe6(arr, "b");
+                 break;
             }
             case 7: {
-
+                ArrayList<String> arr = new ArrayList<>(List.of("c", "b", "d", "a", "e"));
+                exe7(arr);
+                break;
             }
             case 8: {
-
+                ArrayList<Integer> arr = new ArrayList<>(List.of(6, 4, 1, 5, 7));
+                exe8(arr);
+                break;
             }
             case 9: {
                 ArrayList<Integer> arr = new ArrayList<Integer>(List.of(1, 2, 3, 4, 5, 6, 7, 8));
@@ -108,11 +120,13 @@ public class Main {
                 break;
             }
             case 18: {
-
+                LinkedList<Integer> arr = new LinkedList<>(List.of(5, 2, 1, 3, 7, 6, 8));
+                exe18(arr);
                 break;
             }
             case 19: {
-
+                HashSet<Integer> arr = new HashSet<>(List.of(1, 2, 3, 4, 5));
+                exe19(arr);
                 break;
             }
             case 20: {
@@ -127,7 +141,55 @@ public class Main {
             }
         }
     }
+    public static void exe19(HashSet<Integer> arr) {
+        for (int a : arr) {
+            System.out.println("Cac phan tu trong mang: " + a);
+        }
+    }
 
+    public static void exe18(LinkedList<Integer> arr) {
+        System.out.println("Mang chua sap xep: " + arr);
+        Collections.sort(arr);
+        System.out.println("Mang da sap xep: " + arr);
+
+    }
+    public static void exe4(ArrayList<Integer> arr) {
+        int max = arr.get(0);
+        for (int a : arr) {
+            if (a > max) {
+                max = a;
+            }
+        }
+        System.out.println(max);
+    }
+
+    public static void exe5(HashMap<String, Integer> arr) {
+        for (Map.Entry<String, Integer> entry : arr.entrySet()) {
+            String name = entry.getKey();
+            int score = entry.getValue();
+            System.out.println("Name: " + name + ", Score: " + score);
+        }
+    }
+
+    public static void exe6(ArrayList<String> arr, String value) {
+        boolean isContain = arr.contains(value);
+        if (isContain) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+    }
+
+    public static void exe7(ArrayList<String> arr) {
+        arr.sort(null);
+        System.out.println(arr);
+    }
+
+    public static void exe8(ArrayList<Integer> arr) {
+        TreeSet<Integer> list = new TreeSet<>(arr);
+        System.out.println(list);
+
+    }
     public static void isSameElementWithAnotherList(ArrayList<Integer> firstList, ArrayList<Integer> secondList) {
         int size = firstList.size();
         boolean sameSize = firstList.size() == secondList.size();
